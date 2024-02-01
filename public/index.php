@@ -31,23 +31,19 @@
           </form>
         </div>
         <ul class="list-group">
-          <li class="list-group-item">
-            <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
-            &nbsp; <span class="float-start">Task 1</span>
-            <h6 class="float-start">
-              &nbsp;<span class="badge bg-danger">
-                x
+          <?php
+          foreach ($outcomes as $outcome) { ?>
+            <li class="list-group-item">
+              <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
+              &nbsp; <span class="float-start"> &nbsp; <?php echo $outcome['task']; ?>
               </span>
-            </h6>
-          </li>
-          <li class="list-group-item">
-            <input class="form-check-input" type="checkbox" value="" id="" checked />
-            Task 2
-          </li>
-          <li class="list-group-item">
-            <input class="form-check-input" type="checkbox" value="" id="" checked />
-            Task 3
-          </li>
+              <h6 class="float-start">
+                &nbsp;<span class="badge bg-danger">
+                  x
+                </span>
+              </h6>
+            </li>
+          <?php } ?>
         </ul>
 
       </div>

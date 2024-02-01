@@ -1,7 +1,9 @@
 <?php
 try {
     $connection = new PDO('mysql:host=localhost;dbname=tasklist', 'root', 'aeiou');
-    echo "Conexión establecida";
+
+    $sql = "SELECT * FROM tasks";
+    $outcomes = $connection->query($sql);
 } catch (PDOException $e) {
-    echo "Error de conexión" . $e->getMessage();
+    echo "Error de conexión";
 }
