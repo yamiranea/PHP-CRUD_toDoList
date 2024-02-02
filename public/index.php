@@ -8,7 +8,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+    <link rel="stylesheet" href="./styles.css">
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
@@ -37,7 +37,9 @@
           foreach ($outcomes as $outcome) { ?>
                     <li class="list-group-item">
                         <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
-                        &nbsp; <span class="float-start"> &nbsp; <?php echo $outcome['task']; ?>
+                        &nbsp; <span
+                            class="float-start <?php echo ($outcome['status']==1)? 'task-line_through':''; ?> "> &nbsp;
+                            <?php echo $outcome['task']; ?>
                         </span>
                         <h6 class="float-start">
                             &nbsp; <a href="?id=<?php echo $outcome['id']; ?>"> <span class="badge bg-danger">
