@@ -5,6 +5,15 @@ try {
     echo "Error de conexión";
 }
 
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+    $status = (isset($_POST['status'])) ? 1 : 0;
+
+    echo $status;
+    "<br>";
+    echo $id;
+}
+
 if (isset($_POST['add-task'])) {
     $task = $_POST['task'];
     $status = 0;
