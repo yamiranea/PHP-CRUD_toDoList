@@ -8,9 +8,10 @@ try {
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
     $status = (isset($_POST['status'])) ? 1 : 0;
-    echo $status;
-    echo "<br>";
-    echo $id;
+
+    $sql = "UPDATE tasks SET status=? WHERE id=?";
+    $instruction = $connection->prepare($sql);
+    $instruction->execute([$status, $id]);
 }
 
 if (isset($_POST['add-task'])) {
