@@ -37,7 +37,8 @@
           foreach ($outcomes as $outcome) { ?>
                     <li class="list-group-item">
 
-                        <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
+                        <input class="form-check-input float-start" type="checkbox" value="" id=""
+                            <?php echo ($outcome['status'] == 1) ? 'checked' : ''; ?> />
                         <?php echo $outcome['status']; ?>
                         &nbsp; <span
                             class="float-start <?php echo ($outcome['status'] == 1) ? 'task-line_through' : ''; ?> ">&nbsp;
