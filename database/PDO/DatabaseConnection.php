@@ -8,9 +8,8 @@ try {
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
     $status = (isset($_POST['status'])) ? 1 : 0;
-
     echo $status;
-    "<br>";
+    echo "<br>";
     echo $id;
 }
 
