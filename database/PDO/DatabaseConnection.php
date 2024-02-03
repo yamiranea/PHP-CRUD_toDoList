@@ -17,7 +17,7 @@ if (isset($_POST['id'])) {
 if (isset($_POST['add-task'])) {
     $task = $_POST['task'];
     $status = 0;
-    $sql = "INSERT INTO tasks (task, status) VALUES (?, ?)";
+    $sql = "INSERT INTO tasks (task, date, status) VALUES (?, CURRENT_DATE, ?)";
     $instruction = $connection->prepare($sql);
     if ($instruction->execute([$task, $status])) {
         echo "Tarea agregada correctamente.";
@@ -34,4 +34,4 @@ if (isset($_GET['id'])) {
 }
 
 $sql = "SELECT * FROM tasks";
-$outcomes = $connection->query($sql);
+$outcomes = $connection->query($sql)->fetchAll(PDO::FETCH_ASSOC);
