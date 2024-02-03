@@ -36,13 +36,21 @@
                     <?php
           foreach ($outcomes as $outcome) { ?>
                     <li class="list-group-item">
+                        <form action="" method="post">
+                            <input type="text" name="id" value="<?php echo $outcome['id']; ?>">
+                            <input class="form-check-input float-start" type="checkbox" value="" id=""
+                                onChange="this.form.submit()"
+                                <?php echo ($outcome['status'] == 1) ? 'checked' : ''; ?> />
 
-                        <input class="form-check-input float-start" type="checkbox" value="" id=""
-                            <?php echo ($outcome['status'] == 1) ? 'checked' : ''; ?> />
-                        <?php echo $outcome['status']; ?>
-                        &nbsp; <span
-                            class="float-start <?php echo ($outcome['status'] == 1) ? 'task-line_through' : ''; ?> ">&nbsp;
-                            <?php echo $outcome['task']; ?></span>
+                        </form>
+
+
+
+                        &nbsp;
+                        <span class="float-start <?php echo ($outcome['status'] == 1) ? 'task-line_through' : ''; ?> ">
+                            &nbsp;<?php echo $outcome['task']; ?>
+                        </span>
+
                         <h6 class=" float-start">
                             &nbsp; <a href="?id=<?php echo $outcome['id']; ?>"> <span class="badge bg-danger">
                                     x
