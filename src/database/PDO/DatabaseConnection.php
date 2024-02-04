@@ -21,12 +21,3 @@ if (isset($_GET['id'])) {
     $instruction = $connection->prepare($sql);
     $instruction->execute([$id]);
 }
-
-
-
-if (isset($_POST['delete-task'])) {
-    $id = $_POST['id'];
-    $sql = "DELETE FROM tasks WHERE id=?";
-    $instruction = $connection->prepare($sql);
-    $instruction->execute([$id]);
-}
