@@ -1,6 +1,15 @@
 <?php
 include "/Applications/MAMP/htdocs/PHP-toDoList/src/database/PDO/DatabaseConnection.php";
 
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+    $status = (isset($_POST['status'])) ? 1 : 0;
+
+    $sql = "UPDATE tasks SET status=? WHERE id=?";
+    $instruction = $connection->prepare($sql);
+    $instruction->execute([$status, $id]);
+}
+
 if (isset($_POST['modify-task'])) {
     $id = $_POST['id'];
     $modifiedTask = $_POST['modifiedTask'];
