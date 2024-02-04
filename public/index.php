@@ -19,12 +19,18 @@
     <div class="card">
       <div class="card-header">TASKS PLANNER</div>
       <div class="card-body">
+        <form action="" method="post" class="mb-3">
+          <label for="task" class="form-label">New Task: </label>
+          <input type="text" class="form-control" name="task" id="task" placeholder="Add a new thing you want to do" />
+          <br />
+          <input name="add-task" id="add-task" class="btn btn-primary" type="submit" value="Add task" />
+        </form>
         <table class="table">
           <thead>
             <tr>
-              <th>Checkbox</th>
-              <th>Date</th>
-              <th>Task</th>
+              <th>Task Status</th>
+              <th>Creation Date</th>
+              <th>Task Description</th>
               <th>Edit Task</th>
               <th>Delete Task</th>
             </tr>
@@ -47,19 +53,50 @@
                 </td>
 
                 <td>
-                  <a href="?id=<?php echo $outcome['id']; ?>">
-                    <span class="badge bg-danger">x</span>
-                  </a>
+                  <form action="" method="post">
+                    <input type="hidden" name="id" value="<?php echo $outcome['id']; ?>">
+                    <button type="submit" name="delete-task" class="btn btn-danger">
+                      Delete
+                    </button>
+                  </form>
                 </td>
+
               </tr>
+
             <?php } ?>
           </tbody>
         </table>
+        <?php foreach ($outcomes as $outcome) { ?>
+          <div class="modal fade" id="modifyModal<?php echo $outcome['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="modifyModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modifyModalLabel">Modify Task</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="" method="post">
+                    <label for="modifiedTask">Modified Task:</label>
+                    <input type="text" class="form-control" name="modifiedTask" id="modifiedTask" value="<?php echo $outcome['task']; ?>" />
+                    <input type="hidden" name="id" value="<?php echo $outcome['id']; ?>">
+                    <button type="submit" class="btn btn-primary" name="modify-task">Save
+                      Changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
+
       </div>
     </div>
   </main>
   <footer>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
   </script>
 

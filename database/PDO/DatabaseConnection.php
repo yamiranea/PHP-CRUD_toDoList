@@ -33,5 +33,26 @@ if (isset($_GET['id'])) {
     $instruction->execute([$id]);
 }
 
+if (isset($_POST['modify-task'])) {
+    $id = $_POST['id'];
+    $modifiedTask = $_POST['modifiedTask'];
+
+    $sql = "UPDATE tasks SET task=?, date=CURRENT_DATE WHERE id=?";
+    $instruction = $connection->prepare($sql);
+
+    if ($instruction->execute([$modifiedTask, $id])) {
+        echo "Tarea modificada correctamente.";
+    } else {
+        echo "Error al modificar la tarea: " . $instruction->errorInfo()[2];
+    }
+}
+
+if (isset($_POST['delete-task'])) {
+    $id = $_POST['id'];
+    $sql = "DELETE FROM tasks WHERE id=?";
+    $instruction = $connection->prepare($sql);
+    $instruction->execute([$id]);
+}
+
 $sql = "SELECT * FROM tasks";
 $outcomes = $connection->query($sql)->fetchAll(PDO::FETCH_ASSOC);
