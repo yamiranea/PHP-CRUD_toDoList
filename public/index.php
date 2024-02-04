@@ -1,5 +1,6 @@
 <?php include("/Applications/MAMP/htdocs/PHP-toDoList/src/database/PDO/DatabaseConnection.php"); ?>
 <?php include("/Applications/MAMP/htdocs/PHP-toDoList/src/CRUD/CreateTask.php"); ?>
+<?php include("/Applications/MAMP/htdocs/PHP-toDoList/src/CRUD/ReadTask.php"); ?>
 <!doctype html>
 <html lang="en">
 

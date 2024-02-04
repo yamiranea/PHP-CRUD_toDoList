@@ -42,6 +42,3 @@ if (isset($_POST['delete-task'])) {
     $instruction = $connection->prepare($sql);
     $instruction->execute([$id]);
 }
-
-$sql = "SELECT * FROM tasks";
-$outcomes = $connection->query($sql)->fetchAll(PDO::FETCH_ASSOC);
