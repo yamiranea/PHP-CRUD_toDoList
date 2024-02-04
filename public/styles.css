@@ -1,3 +1,44 @@
+body {
+    height: 672px;
+    background-image: url(/PHP-toDoList/assets/images/flat-lay-multicolored-paper-geometry.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+div.card-header {
+    background-color: rgb(126 153 168);
+}
+.card-header h1 {
+    font-family: 'Square Peg', cursive;
+    font-size: 65px;
+    text-align: center;
+    color: white;
+}
+
+input#add-task.btn.btn-primary {
+    background-color: #44c644;;
+    border-color: transparent;
+    font-weight: bold;
+}
+
 .task-line_through {
     text-decoration: line-through;
+}
+
+button.btn.btn-danger {
+    font-weight: bold;
+}
+
+button.btn.btn-info {
+    color: white;
+    font-weight: bold;
+    background-color:#9ac5f8;
+    border-color: transparent;
+    width: 72.91px;
+    height: 38px;
 }
