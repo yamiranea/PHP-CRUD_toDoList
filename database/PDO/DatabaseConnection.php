@@ -37,7 +37,7 @@ if (isset($_POST['modify-task'])) {
     $id = $_POST['id'];
     $modifiedTask = $_POST['modifiedTask'];
 
-    $sql = "UPDATE tasks SET task=?, date=CURRENT_DATE WHERE id=?";
+    $sql = "UPDATE tasks SET task=? WHERE id=?";
     $instruction = $connection->prepare($sql);
 
     if ($instruction->execute([$modifiedTask, $id])) {
