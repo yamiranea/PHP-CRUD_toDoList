@@ -14,17 +14,6 @@ if (isset($_POST['id'])) {
     $instruction->execute([$status, $id]);
 }
 
-if (isset($_POST['add-task'])) {
-    $task = $_POST['task'];
-    $status = 0;
-    $sql = "INSERT INTO tasks (task, date, status) VALUES (?, CURRENT_DATE, ?)";
-    $instruction = $connection->prepare($sql);
-    if ($instruction->execute([$task, $status])) {
-        echo "Tarea agregada correctamente.";
-    } else {
-        echo "Error al agregar la tarea: " . $instruction->errorInfo()[2];
-    }
-}
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
