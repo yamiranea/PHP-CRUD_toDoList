@@ -1,0 +1,10 @@
+{
+    "name": "fliacastaneda/php-to-do-list",
+    "authors": [
+        {
+            "name": "yamiranea",
+            "email": "yamilarenea@gmail.com"
+        }
+    ],
+    "require": {}
+}
