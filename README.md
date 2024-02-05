@@ -23,6 +23,7 @@
 <ul>
 <li><strong>PHP</strong></li>
 <li><strong>MySQL</strong></li>
+<li><strong>Bootstrap</strong></li>  
 <li><strong>Git</strong></li>
 </ul>
 
